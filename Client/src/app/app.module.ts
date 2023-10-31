@@ -8,7 +8,6 @@ import {MocCardService} from "./services/moc-card.service";
 import {AppRoutingModule} from "./app-routing.module";
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { SignInComponent } from './components/auth/sign-in/sign-in.component';
-import {RouterOutlet} from "@angular/router";
 import { CatalogComponent } from './components/catalog/catalog.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { TranslatePipe } from './pipes/translate.pipe';
@@ -21,6 +20,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {OneFieldService} from "./services/repositories/oneFieldService";
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { InfoStringRowComponent } from './components/dataRows/info-string-row/info-string-row.component';
+import { UserProductComponent } from './components/user-product/user-product.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { InfoStringRowComponent } from './components/dataRows/info-string-row/in
     AdminOneFieldsComponent,
     HeaderComponent,
     ErrorMessageComponent,
-    InfoStringRowComponent
+    InfoStringRowComponent,
+    UserProductComponent
   ],
   imports: [
     BrowserModule,
