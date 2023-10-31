@@ -1,0 +1,17 @@
+.catalog{
+  width: 100%;
+}
+
+.catalog__content{
+  padding: 20px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  /*background: #eeeeee;*/
+}
+
+.catalog__content__items{
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}

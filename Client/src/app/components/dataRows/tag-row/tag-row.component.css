@@ -1,0 +1,18 @@
+
+.tag-row__info__image__info{
+    background: url("../../../../styles/images/info.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tag-row__info__image__delete{
+    background: url("../../../../styles/images/delete.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tag-row__id, .tag-row__name{
+    align-self: center;
+}

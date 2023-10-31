@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card__template">
+    <img [src]="product.mainImage" class="card__template__image"/>
+    <div class="card__template__text">
+      <div class="card__template__cost">
+        <p>{{ product.cost }} р.</p>
+      </div>
+      <div class="card__template__info">
+        <p class="card__template__info__text">{{ product.title }}</p>
+      </div>
+      <div class="card__template__reports">
+        <p>{{ '*' + product.rating }}</p>
+      </div>
+    </div>
+  </div>
+</div>

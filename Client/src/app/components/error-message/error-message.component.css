@@ -1,0 +1,19 @@
+.error{
+    color: white;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding-top: 5px;
+    height: 50px;
+    font-size: 1.7em;
+    z-index: 999;
+  align-items: center;
+}
+
+.error__show__commit{
+    background: var(--blue);
+}
+
+.error__show__error{
+    background: var(--red);
+}

@@ -1,0 +1,53 @@
+scalar LocalDateTime
+
+type Query{
+    addresses : [Address]
+    users : [User]
+
+#    authorById(id: ID!) : Author
+}
+
+type Mutation{
+    addAddress(address: AddressInput) : Address
+    addUser(user: UserInput) : User
+    updateAddress(id: ID!, address: AddressInput) : Address
+}
+
+input AddressInput {
+    country : String
+    city : String
+    homeNumber : String
+}
+
+input UserInput{
+    userName : String
+    login : String
+    password : String
+    registrationDate : LocalDateTime
+}
+
+
+
+type Address{
+    id : ID!
+    country : String!
+    city : String!
+    homeNumber : String!
+}
+
+type User{
+    id : ID!
+    permissions : [EPermission]
+    userName : String
+    login : String
+    password : String
+    registrationDate : LocalDateTime
+}
+
+
+enum EPermission{
+    CLIENT
+    MODERATOR
+    ADMIN
+    SELLER
+}

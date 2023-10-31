@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --red : #d73b5c;
+  --white : #edebf0;
+  --green : #30b893;
+  --yellow : #fbd315;
+  --blue : #04a2e4;
+}
+
+html,body{
+  display: grid;
+  margin: 0 auto;
+  width: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h2{
+  text-align: center;
+  font-size: 4em;
+  padding: 10px 0;
+}
+
+input{
+  text-align: center;
+  font-size: 3em;
+  border: none;
+  margin-bottom: 20px;
+  background: var(--white);
+  outline: none;
+  padding: 10px 0;
+  border-radius: 10px;
+
+}
+
+.input__error{
+  .input__error&.ng-touched{
+    .input__error&.ng-invalid{
+      border: var(--red) solid 1px;
+    }
+  }
+}

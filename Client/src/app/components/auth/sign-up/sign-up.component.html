@@ -1,0 +1,49 @@
+<div class="auth-container">
+  <form class="auth__wrapper" [formGroup]="form" (submit)="signIn()">
+    <h2>{{'Регистрация' | translate}}</h2>
+
+    <input class="auth__input" type="text" placeholder="{{'Логин' | translate}}" formControlName="login">
+    <div class="errors" *ngIf="form.get('login')?.invalid && form.get('login')?.touched">
+      <small *ngIf="form.get('login')?.errors?.['required']">{{'Обязательное поле' | translate}}</small>
+      <small *ngIf="form.get('login')?.errors?.['email']">{{'Почта не соответствует формату' | translate}}</small>
+      <small *ngIf="form.get('login')?.errors?.['maxlength']">
+        {{'Максимальная длина поля ' | translate}}
+        {{form.get('login')?.errors?.['maxlength']?.['requiredLength']}}
+      </small>
+      <small *ngIf="form.get('login')?.errors?.['minlength']">
+        {{'Минимальная длина поля ' | translate }}
+        {{form.get('login')?.errors?.['minlength']?.['requiredLength']}}
+      </small>
+    </div>
+
+    <input class="auth__input" type="password" placeholder="{{'Пароль' | translate}}" formControlName="password">
+    <div class="errors" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+      <small *ngIf="form.get('password')?.errors?.['required']">{{'Обязательное поле' | translate}}</small>
+      <small *ngIf="form.get('password')?.errors?.['maxlength']">
+        {{'Максимальная длина поля ' | translate}}
+        {{form.get('password')?.errors?.['maxlength']?.['requiredLength']}}
+      </small>
+      <small *ngIf="form.get('password')?.errors?.['minlength']">
+        {{'Минимальная длина поля ' | translate }}
+        {{form.get('password')?.errors?.['minlength']?.['requiredLength']}}
+      </small>
+    </div>
+
+    <input class="auth__input" type="password" placeholder="{{'Повторите пароль' | translate}}" formControlName="confirmPassword">
+    <div class="errors" *ngIf="form.get('confirmPassword')?.invalid && form.get('confirmPassword')?.touched">
+      <small *ngIf="form.get('confirmPassword')?.errors?.['required']">{{'Обязательное поле' | translate}}</small>
+      <small *ngIf="form.get('confirmPassword')?.errors?.['passwordMatch']">{{'Пароли не совпадают' | translate}}</small>
+      <small *ngIf="form.get('confirmPassword')?.errors?.['maxlength']">
+        {{'Максимальная длина поля ' | translate}}
+        {{form.get('confirmPassword')?.errors?.['maxlength']?.['requiredLength']}}
+      </small>
+      <small *ngIf="form.get('confirmPassword')?.errors?.['minlength']">
+        {{'Минимальная длина поля ' | translate }}
+        {{form.get('confirmPassword')?.errors?.['minlength']?.['requiredLength']}}
+      </small>
+    </div>
+    <a class="auth__link" routerLink="/signin">{{'У меня есть аккаунт' | translate}}</a>
+
+    <button type="submit" [disabled]="form.invalid">OK</button>
+  </form>
+</div>

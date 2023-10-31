@@ -1,0 +1,8 @@
+<div class="error" *ngIf="message.message != ''"
+     [ngClass]="
+     {'error__show__commit': message.statusCode == 200,
+     'error__show__error': message.statusCode == 400,
+     'error__show': message.message != ''
+     }">
+    {{message.message}}
+</div>

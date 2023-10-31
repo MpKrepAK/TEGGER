@@ -1,0 +1,84 @@
+<div class="admin">
+    <app-error-message [message]="error"></app-error-message>
+    <div *ngIf="visibleData!=EVisibleData.NONE" class="admin__container__options">
+
+        <form
+                [formGroup]="createForm" (submit)="create()"
+                *ngIf="visibleData==EVisibleData.CREATE"
+                class="admin__container__options__container">
+            <h2>Добавление</h2>
+            <input class="input__error" type="text" placeholder="Название" formControlName="name">
+          <div class="errors" *ngIf="createForm.get('name')?.invalid && createForm.get('name')?.touched">
+            <small *ngIf="createForm.get('name')?.errors?.['required']">Обязательное поле</small>
+            <small *ngIf="createForm.get('name')?.errors?.['maxlength']">
+              Максимальная длина поля
+              {{createForm.get('name')?.errors?.['maxlength']?.['requiredLength']}}
+            </small>
+            <small *ngIf="createForm.get('name')?.errors?.['minlength']">
+              Минимальная длина поля
+              {{createForm.get('name')?.errors?.['minlength']?.['requiredLength']}}
+            </small>
+          </div>
+            <button type="submit" class="admin__button" [disabled]="createForm.invalid">Добавить</button>
+            <button (click)="visibleData=EVisibleData.NONE" class="admin__button">Назад</button>
+
+        </form>
+
+        <form
+                [formGroup]="searchForm" (submit)="search()"
+                *ngIf="visibleData==EVisibleData.SEARCH"
+                class="admin__container__options__container">
+            <h2>{{'Поиск'}}</h2>
+            <input class="input__error" type="text" placeholder="{{'Название'}}" formControlName="name">
+
+            <button type="submit" class="admin__button">Поиск</button>
+            <button (click)="visibleData=EVisibleData.NONE" class="admin__button">Назад</button>
+        </form>
+
+        <form
+                [formGroup]="updateForm" (submit)="update()"
+                *ngIf="visibleData==EVisibleData.INFO"
+                class="admin__container__options__container">
+            <h2>{{'Обновление'}}</h2>
+            <input class="input__error" type="text" placeholder="{{'Название'}}" formControlName="name">
+          <div class="errors" *ngIf="updateForm.get('name')?.invalid && updateForm.get('name')?.touched">
+            <small *ngIf="updateForm.get('name')?.errors?.['required']">Обязательное поле</small>
+            <small *ngIf="updateForm.get('name')?.errors?.['maxlength']">
+              Максимальная длина поля
+              {{updateForm.get('name')?.errors?.['maxlength']?.['requiredLength']}}
+            </small>
+            <small *ngIf="updateForm.get('name')?.errors?.['minlength']">
+              Минимальная длина поля
+              {{updateForm.get('name')?.errors?.['minlength']?.['requiredLength']}}
+            </small>
+          </div>
+            <button type="submit" class="admin__button" [disabled]="updateForm.invalid">Обновить</button>
+            <button (click)="visibleData=EVisibleData.NONE" class="admin__button">Назад</button>
+        </form>
+    </div>
+
+    <app-header></app-header>
+    <div class="admin__container">
+        <div class="admin__container__buttons">
+            <button class="admin__button" (click)="visibleData=EVisibleData.CREATE">Создать</button>
+            <h2>{{title}}</h2>
+            <button class="admin__button" (click)="visibleData=EVisibleData.SEARCH">Поиск</button>
+        </div>
+        <div class="admin__columns__header tag-row">
+            <div class="col-span-1"></div>
+            <div class="col-span-1"></div>
+            <div class="col-span-1">Id</div>
+            <div class="col-span-1">Название</div>
+        </div>
+        <div class="admin__container__rows">
+            <div *ngFor="let row of entities">
+                <app-tag-row (returned)="viewUpdate($event)" (id)="delete($event)" [entity]="row"></app-tag-row>
+            </div>
+        </div>
+        <div class="admin__container__buttons">
+            <button class="admin__button" (click)="previousPage()">{{'<'}}</button>
+            <p class="admin__page-number">{{pageNumber+1}} из {{pageCount}}</p>
+            <button class="admin__button" (click)="nextPage()">{{'>'}}</button>
+        </div>
+    </div>
+</div>

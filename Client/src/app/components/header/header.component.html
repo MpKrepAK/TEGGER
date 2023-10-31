@@ -1,0 +1,13 @@
+<div class="header">
+  <div class="header__container">
+    <h2>TEGGER</h2>
+    <div></div>
+    <div class="header__account" (click)="uiData.userAccountPopUpOptionsVisibility = !uiData.userAccountPopUpOptionsVisibility"></div>
+  </div>
+  <div class="header__account__popup" [hidden]="!uiData.userAccountPopUpOptionsVisibility">
+    <p>Опция 1</p>
+    <p>Опция 2</p>
+    <p>Опция 3</p>
+    <p>Опция 4</p>
+  </div>
+</div>
