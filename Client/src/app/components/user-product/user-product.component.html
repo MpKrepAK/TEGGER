@@ -1,1 +1,57 @@
-<p>user-product works!</p>
+<app-header></app-header>
+<div class="user-product__container">
+  <div class="user-product__container__images">
+    <div class="image">
+<!--      <div class="image__button image__button__left">{{'<'}}</div>-->
+      <img (click)="previousImage()" class="image__button image__button__left" src="arrow.png">
+      <img (click)="nextImage()" class="image__button image__button__right" src="arrow.png">
+      <img [src]="currentImage"/>
+
+    </div>
+  </div>
+
+  <div class="flex-col mt-10 ">
+    <div class="text-2xl font-extrabold">
+      <h2>{{product.title}}</h2>
+    </div>
+    <div class="flex-col mt-[100px] space-y-[15px]">
+      <div class="font-extrabold text-3xl grid grid-cols-[0.7fr_1fr]">
+        <p>Цена</p>
+        <p>{{product.cost}}</p>
+      </div>
+      <div class="font-extrabold text-3xl grid grid-cols-[0.7fr_1fr]">
+        <p>Код</p>
+        <p>{{product.id}}</p>
+      </div>
+      <div class="font-extrabold text-3xl grid grid-cols-[0.7fr_1fr]">
+        <p>Тип</p>
+        <p>{{product.typeName}}</p>
+      </div>
+
+      <div class="font-extrabold text-3xl grid grid-cols-[0.7fr_1fr]">
+        <p>Производитель</p>
+        <p>{{product.manufacturerName}}</p>
+      </div>
+      <div class="font-extrabold text-3xl grid grid-cols-[0.7fr_1fr]">
+        <p>Количество</p>
+        <p>{{product.count}}</p>
+      </div>
+      <div class="font-extrabold text-3xl grid grid-cols-[0.7fr_1fr]">
+        <p>Рейтинг</p>
+        <p>{{product.rating}}</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-span-2 text-center max-w-[90%] m-[0_auto]">
+    <p class="text-4xl font-extrabold mb-10">Информация</p>
+    <p class="text-3xl">{{product.info}}</p>
+  </div>
+
+  <div class="col-span-2 text-center max-w-[90%] m-[0_auto]">
+    <p class="text-4xl font-extrabold">Информация</p>
+    <p class="text-3xl">{{product.info}}</p>
+  </div>
+
+</div>

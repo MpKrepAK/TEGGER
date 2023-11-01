@@ -19,7 +19,6 @@ import { HeaderComponent } from './components/header/header.component';
 import {HttpClientModule} from "@angular/common/http";
 import {OneFieldService} from "./services/repositories/oneFieldService";
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
-import { InfoStringRowComponent } from './components/dataRows/info-string-row/info-string-row.component';
 import { UserProductComponent } from './components/user-product/user-product.component';
 
 @NgModule({
@@ -35,7 +34,6 @@ import { UserProductComponent } from './components/user-product/user-product.com
     AdminOneFieldsComponent,
     HeaderComponent,
     ErrorMessageComponent,
-    InfoStringRowComponent,
     UserProductComponent
   ],
   imports: [

@@ -3,6 +3,7 @@ import {ProductInfoNumberDTO} from "./productInfoNumberDTO";
 import {ProductInfoStringDTO} from "./productInfoStringDTO";
 
 export interface ProductDTO{
+  cost: number;
   id : number,
   typeName : string,
   manufacturerName : string,
