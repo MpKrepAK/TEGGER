@@ -1,0 +1,79 @@
+<div>
+  <app-header></app-header>
+  <div class="seller-product">
+
+
+    <div class="seller-product__main-info">
+      <div class="seller-product__image">
+        <img [src]="mainImage" alt="Основное изображение не выбрано">
+        <input type="file" (change)="onMainImageSelected($event)" accept="image/*">
+      </div>
+      <input placeholder="Название" [(ngModel)]="product.title" type="text">
+      <input placeholder="Цена" [(ngModel)]="product.cost" type="number">
+      <input placeholder="Количество" [(ngModel)]="product.count" type="number">
+      <textarea placeholder="Информация" [(ngModel)]="product.info"></textarea>
+      <select>
+        <option>Выберите тип товара</option>
+        <option *ngFor="let type of types" value="{{type.id}}">{{type.name}}</option>
+      </select>
+
+      <select>
+        <option>Выберите производителя</option>
+        <option *ngFor="let manufacturer of manufacturers" value="{{manufacturer.id}}">{{manufacturer.name}}</option>
+      </select>
+
+    </div>
+
+    <div class="seller-product__images">
+      <div class="setter-product__images-wrapper">
+        <app-seller-product-image #image></app-seller-product-image>
+        <app-seller-product-image #image></app-seller-product-image>
+        <app-seller-product-image #image></app-seller-product-image>
+        <app-seller-product-image #image></app-seller-product-image>
+        <app-seller-product-image #image></app-seller-product-image>
+      </div>
+    </div>
+
+    <div class="seller-product__info">
+      <div class="seller-product__info-wrapper">
+        <div>
+          <div>
+            <p>Строковые</p>
+            <button (click)="stringItemsCount=0">Очистить</button>
+            <button (click)="stringItemsCount+1<10 ? stringItemsCount=stringItemsCount+1 : stringItemsCount">Добавить</button>
+          </div>
+          <div *ngFor="let i of getArray(stringItemsCount)">
+            <app-seller-product-info #strings type="text" [values]="q1"></app-seller-product-info>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <p>Числовые</p>
+            <button (click)="numberItemsCount=0">Очистить</button>
+            <button (click)="numberItemsCount+1<10 ? numberItemsCount=numberItemsCount+1 : numberItemsCount">Добавить</button>
+          </div>
+          <div *ngFor="let i of getArray(numberItemsCount)">
+            <app-seller-product-info #numbers type="number" [values]="q2"></app-seller-product-info>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <p>Логические</p>
+            <button (click)="booleanItemsCount=0">Очистить</button>
+            <button (click)="booleanItemsCount+1<10 ? booleanItemsCount=booleanItemsCount+1 : booleanItemsCount">Добавить</button>
+          </div>
+          <div *ngFor="let i of getArray(booleanItemsCount)">
+            <app-seller-product-info #booleans type="boolean" [values]="q3"></app-seller-product-info>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <button (click)="add()">qweqweqwe</button>
+    </div>
+  </div>
+
+</div>

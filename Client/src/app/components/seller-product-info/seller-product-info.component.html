@@ -1,0 +1,14 @@
+<div class="product-info">
+  <div class="product-info__wrapper">
+    <div>
+      <select [value]="selectedValue">
+        <option *ngFor="let val of values" value="{{val.id}}">{{val.name}}</option>
+      </select>
+    </div>
+    <div>
+      <input [(ngModel)]="inputValue" *ngIf="type==='text'" type="text">
+      <input [(ngModel)]="inputValue" *ngIf="type==='number'" type="number">
+      <input [(ngModel)]="inputValue" *ngIf="type==='boolean'" type="checkbox">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.product-info__wrapper{
+  background: #04a2e4;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.product-info__wrapper select{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 2em;
+
+}
+
+.product-info__wrapper input{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 2em;
+
+}
