@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthDTO} from "../../../domain/dto/authDTO";
 import {AppDataService} from "../../../services/app-data.service";
+import {ServerMessageDTO} from "../../../domain/dto/serverMessageDTO";
+import {UserDTO} from "../../../domain/dto/userDTO";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-sign-in',
@@ -25,11 +28,20 @@ export class SignInComponent {
 
   signInDTO : AuthDTO = {login : '', password : ''};
 
-  constructor(public appDataService : AppDataService) {
+  constructor(public appDataService : AppDataService, private appData : AppDataService, private http : HttpClient) {
   }
   signIn() {
     this.signInDTO.login = this.form.get('login')?.value;
     this.signInDTO.password = this.form.get('password')?.value;
-    console.log(this.signInDTO);
+
+    this.http.post<ServerMessageDTO>(this.appData.serverUrl + "/login/signin", <AuthDTO>{login: this.signInDTO.login, password: this.signInDTO.password}).subscribe(x=>{
+      if (x.statusCode===200){
+        this.http.post<UserDTO>(this.appData.serverUrl + "/users/login", this.signInDTO).subscribe(x=>{
+          this.appData.user = x;
+          console.log(x);
+        });
+      }
+    });
+    console.log("qwe")
   }
 }

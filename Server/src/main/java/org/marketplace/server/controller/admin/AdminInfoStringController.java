@@ -15,7 +15,10 @@ public class AdminInfoStringController {
     public AdminInfoStringController(InfoStringService infoStringService) {
         this.infoStringService = infoStringService;
     }
-
+    @GetMapping("all")
+    public List<OneFieldEntityDTO> getAll(){
+        return infoStringService.getAll();
+    }
     @GetMapping("")
     public Long getPageCount(@RequestParam(required = false) String name){
         return infoStringService.pageCount(name);

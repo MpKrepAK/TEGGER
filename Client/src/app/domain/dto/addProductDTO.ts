@@ -3,7 +3,7 @@ import {ProductInfoNumberDTO} from "./productInfoNumberDTO";
 import {ProductInfoStringDTO} from "./productInfoStringDTO";
 import {OneFieldEntityDTO} from "./oneFieldEntityDTO";
 
-export interface ProductDTO{
+export interface AddProductDTO{
   cost: number;
   id : number,
   typeName : string,
@@ -14,8 +14,8 @@ export interface ProductDTO{
   title : string,
   info : string,
   images : string[],
-  infoBooleans : ProductInfoBooleanDTO[],
-  infoNumbers : ProductInfoNumberDTO[],
-  infoStrings : ProductInfoStringDTO[],
+  infoBooleans : OneFieldEntityDTO[],
+  infoNumbers : OneFieldEntityDTO[],
+  infoStrings : OneFieldEntityDTO[],
   tags : OneFieldEntityDTO[]
 }

@@ -44,14 +44,47 @@
     </div>
   </div>
 
-  <div class="col-span-2 text-center max-w-[90%] m-[0_auto]">
+  <div class="col-span-2 text-center max-w-[90%] m-[0_auto] mb-[50px]">
     <p class="text-4xl font-extrabold mb-10">Информация</p>
     <p class="text-3xl">{{product.info}}</p>
   </div>
 
-  <div class="col-span-2 text-center max-w-[90%] m-[0_auto]">
-    <p class="text-4xl font-extrabold">Информация</p>
-    <p class="text-3xl">{{product.info}}</p>
+  <div class="text-center w-full text-2xl">
+    <p class="font-extrabold text-3xl mb-10">Характеристики</p>
+    <div class="flex-col flex gap-10">
+      <div>
+        <div class="w-full grid-cols-2 grid" *ngFor="let info of product.infoStrings">
+          <div class="font-bold">{{info.name}}</div>
+          <div>{{info.value}}</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="w-full grid-cols-2 grid" *ngFor="let info of product.infoNumbers">
+          <div class="font-bold">{{info.name}}</div>
+          <div>{{info.value}}</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="w-full grid-cols-2 grid" *ngFor="let info of product.infoBooleans">
+          <div class="font-bold">{{info.name}}</div>
+          <div>{{info.value}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center text-2xl">
+    <p class="font-extrabold text-3xl mb-10">Теги</p>
+    <div class="flex-wrap flex gap-5 text-2xl">
+      <div class="border-2 py-4 px-7 rounded-3xl" *ngFor="let tag of product.tags">
+        <p>{{tag.name}}</p>
+      </div>
+      <div class="border-2 py-4 px-7 rounded-3xl" *ngFor="let tag of product.tags">
+        <p>{{tag.name}}</p>
+      </div>
+    </div>
   </div>
 
 </div>

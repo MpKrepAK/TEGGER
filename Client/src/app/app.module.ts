@@ -20,6 +20,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {OneFieldService} from "./services/repositories/oneFieldService";
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { UserProductComponent } from './components/user-product/user-product.component';
+import { SellerProductComponent } from './components/seller-product/seller-product.component';
+import { SellerProductImageComponent } from './components/seller-product-image/seller-product-image.component';
+import { SellerProductInfoComponent } from './components/seller-product-info/seller-product-info.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { UserProductComponent } from './components/user-product/user-product.com
     AdminOneFieldsComponent,
     HeaderComponent,
     ErrorMessageComponent,
-    UserProductComponent
+    UserProductComponent,
+    SellerProductComponent,
+    SellerProductImageComponent,
+    SellerProductInfoComponent
   ],
   imports: [
     BrowserModule,

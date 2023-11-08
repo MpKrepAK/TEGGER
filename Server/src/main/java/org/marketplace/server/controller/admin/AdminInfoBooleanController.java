@@ -15,7 +15,10 @@ public class AdminInfoBooleanController {
     public AdminInfoBooleanController(InfoBooleanService infoBooleanService) {
         this.infoBooleanService = infoBooleanService;
     }
-
+    @GetMapping("all")
+    public List<OneFieldEntityDTO> getAll(){
+        return infoBooleanService.getAll();
+    }
     @GetMapping("")
     public Long getPageCount(@RequestParam(required = false) String name){
         return infoBooleanService.pageCount(name);

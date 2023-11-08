@@ -3,7 +3,7 @@
   margin: 10px auto;
   display: grid;
   grid-template-columns: 600px 1fr;
-  grid-template-rows: 700px auto auto;
+  grid-template-rows: 700px auto auto auto;
   column-gap: 30px;
   row-gap: 30px;
 }

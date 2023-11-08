@@ -1,0 +1,8 @@
+<div class="product-image border-4">
+  <div class="product-image__wrapper">
+    <input type="file" (change)="onFileSelected($event)">
+    <button *ngIf="image!==''" (click)="image=''" class="text-2xl">Удалить</button>
+    <img [src]="image">
+
+  </div>
+</div>

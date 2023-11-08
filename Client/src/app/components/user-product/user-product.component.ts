@@ -77,6 +77,12 @@ export class UserProductComponent {
         name : 'Строка 4',
         value : 'fgh'
       },
+    ],
+    tags : [
+      {id: 1, name : 'Тег 1'},
+      {id: 1, name : 'Тегrtdfghgвввввввввввввввввввввввввввhghdfgt 1'},
+      {id: 1, name : 'Тегefghrt 1'},
+      {id: 1, name : 'Тег 541'},
     ]
   }
 

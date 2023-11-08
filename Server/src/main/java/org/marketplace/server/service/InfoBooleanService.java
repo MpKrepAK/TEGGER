@@ -25,6 +25,9 @@ public class InfoBooleanService {
         this.mapperService = mapperService;
         this.infoBooleanRepository = infoBooleanRepository;
     }
+    public List<OneFieldEntityDTO> getAll(){
+        return infoBooleanRepository.findAll().stream().map(mapperService::fromInfoBoolean).collect(Collectors.toList());
+    }
 
     public List<OneFieldEntityDTO> getPage(int page, String name){
         Pageable pageable = PageRequest.of(page, pageSize);

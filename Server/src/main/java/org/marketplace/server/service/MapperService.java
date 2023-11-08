@@ -23,17 +23,6 @@ public class MapperService {
                 .orElseThrow(()->new NoSuchElementException("Пользователь не найден"));
     }
 
-    public UserDTO userDTOFromUser(@NotNull User user){
-        return new UserDTO(
-                user.getId(),
-                user.getFirstName(),
-                user.getLastName(),
-                user.getPhoneNumber(),
-                user.getGender(),
-                user.getLogin()
-        );
-    }
-
     public CardDTO cardDTOFromProduct(@NotNull Product product){
         return new CardDTO(
                 product.getId(),

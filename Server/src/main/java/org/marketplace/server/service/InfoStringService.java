@@ -19,6 +19,9 @@ public class InfoStringService {
     @Value("${admin.page.size}")
     private int pageSize;
 
+    public List<OneFieldEntityDTO> getAll(){
+        return infoStringRepository.findAll().stream().map(mapperService::fromInfoString).collect(Collectors.toList());
+    }
     public InfoStringService(
             MapperService mapperService,
             InfoStringRepository infoStringRepository) {

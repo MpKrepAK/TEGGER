@@ -15,18 +15,17 @@ public class UserDTO {
     private String phoneNumber;
     private EGender gender;
     private String login;
+    private String password;
+    private String[] permissions;
 
-    public UserDTO(long id,
-                   String firstName,
-                   String lastName,
-                   String phoneNumber,
-                   EGender gender,
-                   String login) {
+    public UserDTO(long id, String firstName, String lastName, String phoneNumber, EGender gender, String login, String password, String[] permissions) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.gender = gender;
         this.login = login;
+        this.password = password;
+        this.permissions = permissions;
     }
 }

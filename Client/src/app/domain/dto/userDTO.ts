@@ -6,5 +6,7 @@ export interface UserDTO{
   lastName : string,
   phoneNumber : string,
   gender : EGender,
-  login : string
+  login : string,
+    password : string,
+  permissions : string[]
 }

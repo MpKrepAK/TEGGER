@@ -1,0 +1,11 @@
+.product-image{
+  width: 100%;
+}
+
+.product-image__wrapper{
+  width: 100%;
+}
+
+.product-image__wrapper img{
+  max-height: 700px;
+}
